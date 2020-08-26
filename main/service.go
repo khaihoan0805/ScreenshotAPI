@@ -1,8 +1,8 @@
 package main
 
 import (
-	"log"
 	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -11,7 +11,7 @@ func homepageHandler(w http.ResponseWriter, r *http.Request) {
 	checkError(err)
 }
 
-func  checkError(err error) {
+func checkError(err error) {
 	if err != nil {
 		log.Panic(err)
 	}
@@ -20,6 +20,6 @@ func main() {
 	http.HandleFunc("/", homepageHandler)
 	fmt.Println("server is listening on port 3000")
 	log.Panic(
-		http.ListenAndServe(":3000", nil)
+		http.ListenAndServe(":3000", nil),
 	)
 }
